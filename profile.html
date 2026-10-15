@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f9fc">
+  <title>Mon profil — AntiBotWall Test Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .profile-wrap{width:min(850px,90%);margin:68px auto 90px}.profile-heading{margin-bottom:28px}.profile-heading h1{font:800 clamp(32px,5vw,48px)/1.1 Manrope,sans-serif;letter-spacing:-1.8px;margin:15px 0}.profile-card{display:flex;align-items:center;gap:22px;padding:28px;background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.avatar{width:84px;height:84px;border-radius:50%;object-fit:cover;background:var(--soft);display:grid;place-items:center;font-size:28px;font-weight:800;color:var(--blue);flex:none}.profile-name{font:800 23px Manrope,sans-serif;margin:0 0 8px;overflow-wrap:anywhere}.profile-email{color:var(--muted);font-size:13px;overflow-wrap:anywhere}.status{display:inline-flex;align-items:center;gap:7px;margin-top:12px;padding:7px 10px;border-radius:20px;background:#e8f8f0;color:#137a52;font-size:11px;font-weight:700}.status i{width:7px;height:7px;border-radius:50%;background:#1eaf73}.profile-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}.detail{padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:13px;min-width:0}.detail small{display:block;color:var(--muted);font-size:10px;margin-bottom:8px}.detail strong{font-size:13px;overflow-wrap:anywhere}.profile-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.login-panel{padding:28px;background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.provider-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:22px}.provider-link{display:flex;align-items:center;gap:12px;padding:15px;border:1px solid var(--line);border-radius:12px;font-size:13px;font-weight:700;background:var(--surface)}.provider-link:hover{border-color:#8ab0ff;background:var(--soft)}.provider-symbol{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--soft);color:var(--blue)}.notice{font-size:12px;line-height:1.7;color:var(--muted);margin-top:16px}.error-note{color:#c03939}.hidden{display:none!important}@media(max-width:600px){.profile-card{align-items:flex-start;flex-direction:column}.profile-details,.provider-list{grid-template-columns:1fr}.profile-wrap{margin-top:42px}footer{gap:12px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="mark">A</span><span>AntiBotWall<small>TEST LAB</small></span></a>
+    <nav><a href="./">Accueil</a><button id="themeToggle" class="theme" aria-label="Changer de thème">◐</button></nav>
+  </header>
+  <main class="profile-wrap">
+    <div class="profile-heading"><div class="eyebrow"><i></i> ESPACE COMPTE</div><h1 id="pageTitle">Vérification de la session…</h1><p class="muted" id="pageSubtitle">Récupération des informations du profil.</p></div>
+    <section id="signedOut" class="login-panel hidden">
+      <h2 style="font:800 22px Manrope,sans-serif;margin:0 0 8px">Se connecter avec AntiBotWall</h2>
+      <p class="muted" style="font-size:13px;line-height:1.7;margin:0">Choisissez un fournisseur configuré pour votre intégration AntiBotWall.</p>
+      <div id="providerList" class="provider-list">
+        <a class="provider-link" data-provider="discord" href="#"><span class="provider-symbol">◉</span> Discord ↗</a>
+        <a class="provider-link" data-provider="github" href="#"><span class="provider-symbol">⌘</span> GitHub ↗</a>
+        <a class="provider-link" data-provider="google" href="#"><span class="provider-symbol">G</span> Google ↗</a>
+        <a class="provider-link" data-provider="epsilonsocial" href="#"><span class="provider-symbol">ε</span> Epsilon Social ↗</a>
+      </div>
+      <p id="loginNotice" class="notice">Renseignez d’abord la clé publique de votre intégration dans la zone de test de la page d’accueil. Le fournisseur doit être activé dans le Studio AntiBotWall et l’URL de callback doit être configurée.</p>
+      <p id="profileError" class="notice error-note"></p>
+    </section>
+    <section id="signedIn" class="hidden">
+      <div class="profile-card">
+        <img id="avatar" class="avatar hidden" alt="Avatar du profil">
+        <div id="avatarFallback" class="avatar">A</div>
+        <div style="min-width:0"><h2 id="userName" class="profile-name">Utilisateur</h2><div id="userEmail" class="profile-email">Adresse e-mail non fournie</div><span class="status"><i></i> Connecté</span></div>
+      </div>
+      <div class="profile-details">
+        <div class="detail"><small>Fournisseur de connexion</small><strong id="providerValue">—</strong></div>
+        <div class="detail"><small>Identifiant du profil</small><strong id="userId">—</strong></div>
+        <div class="detail"><small>Statut de la session</small><strong>Authentifiée côté serveur</strong></div>
+        <div class="detail"><small>Session valide jusqu’au</small><strong id="sessionExpiry">—</strong></div>
+      </div>
+      <div class="profile-actions"><button id="logoutButton" class="btn secondary">Se déconnecter</button><a class="btn primary" href="./">Retour au site →</a></div>
+      <p class="notice">Ces informations proviennent du jeton AntiBotWall vérifié côté serveur. Le jeton brut n’est jamais affiché dans cette page.</p>
+    </section>
+  </main>
+  <footer><a class="brand" href="./"><span class="mark">A</span><span>AntiBotWall</span></a><span>Site de démonstration · <a href="https://antibotwall.reqeuss.com/docs" target="_blank" rel="noreferrer">Documentation</a></span><span>© 2026 AntiBotWall</span></footer>
+  <script src="profile.js"></script>
+</body>
+</html>
