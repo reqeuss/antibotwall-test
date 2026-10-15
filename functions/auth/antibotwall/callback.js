@@ -22,6 +22,20 @@ function safeEqual(a, b) {
 function redirect(path) {
   return new Response(null, { status: 303, headers: { Location: path, "Cache-Control": "no-store", "Referrer-Policy": "no-referrer" } });
 }
+export async function onRequestGet() {
+  return new Response(
+    "AntiBotWall callback actif. Cette URL doit être appelée en POST avec un champ token ; elle ne se teste pas en ouvrant le lien directement.",
+    {
+      status: 405,
+      headers: {
+        "Allow": "POST",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "no-store"
+      }
+    }
+  );
+}
+
 export async function onRequestPost({ request, env }) {
   if (!env.ABW_SITE_KEY || !env.ABW_SITE_SECRET) {
     return new Response("AntiBotWall integration is not configured.", { status: 503 });
