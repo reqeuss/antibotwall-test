@@ -26,14 +26,14 @@
         <a class="provider-link" data-provider="google" href="#"><span class="provider-symbol">G</span> Google ↗</a>
         <a class="provider-link" data-provider="epsilonsocial" href="#"><span class="provider-symbol">ε</span> Epsilon Social ↗</a>
       </div>
-      <p id="loginNotice" class="notice">Renseignez d’abord la clé publique de votre intégration dans la zone de test de la page d’accueil. Le fournisseur doit être activé dans le Studio AntiBotWall et l’URL de callback doit être configurée.</p>
+      <div class="profile-actions" style="margin-top:20px"><button id="demoProfileButton" class="btn primary" type="button">Prévisualiser un profil démo →</button><a class="btn secondary" href="./#test">Configurer le test CAPTCHA</a></div><p id="loginNotice" class="notice">Mode aperçu disponible sans configuration Cloudflare. Les boutons des fournisseurs seront activés lorsque l’intégration AntiBotWall sera configurée.</p>
       <p id="profileError" class="notice error-note"></p>
     </section>
     <section id="signedIn" class="hidden">
       <div class="profile-card">
         <img id="avatar" class="avatar hidden" alt="Avatar du profil">
         <div id="avatarFallback" class="avatar">A</div>
-        <div style="min-width:0"><h2 id="userName" class="profile-name">Utilisateur</h2><div id="userEmail" class="profile-email">Adresse e-mail non fournie</div><span class="status"><i></i> Connecté</span></div>
+        <div style="min-width:0"><h2 id="userName" class="profile-name">Utilisateur</h2><div id="userEmail" class="profile-email">Adresse e-mail non fournie</div><span id="profileStatus" class="status"><i></i> Connecté</span></div>
       </div>
       <div class="profile-details">
         <div class="detail"><small>Fournisseur de connexion</small><strong id="providerValue">—</strong></div>
@@ -42,7 +42,7 @@
         <div class="detail"><small>Session valide jusqu’au</small><strong id="sessionExpiry">—</strong></div>
       </div>
       <div class="profile-actions"><button id="logoutButton" class="btn secondary">Se déconnecter</button><a class="btn primary" href="./">Retour au site →</a></div>
-      <p class="notice">Ces informations proviennent du jeton AntiBotWall vérifié côté serveur. Le jeton brut n’est jamais affiché dans cette page.</p>
+      <p id="profileSourceNotice" class="notice">Ces informations proviennent du jeton AntiBotWall vérifié côté serveur. Le jeton brut n’est jamais affiché dans cette page.</p>
     </section>
   </main>
   <footer><a class="brand" href="./"><span class="mark">A</span><span>AntiBotWall</span></a><span>Site de démonstration · <a href="https://antibotwall.reqeuss.com/docs" target="_blank" rel="noreferrer">Documentation</a></span><span>© 2026 AntiBotWall</span></footer>
