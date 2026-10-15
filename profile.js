@@ -8,15 +8,9 @@
     localStorage.setItem("abw_test_theme", document.body.classList.contains("dark") ? "dark" : "light");
   });
 
-  document.querySelectorAll("[data-provider]").forEach((link) => {
-    link.href = "#";
-    link.setAttribute("aria-disabled", "true");
-    link.title = "Connexion réelle disponible après configuration de l'intégration";
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      $("profileError").textContent = "La connexion réelle n’est pas encore configurée. Utilisez l’aperçu démo pour tester l’interface.";
-    });
-  });
+  // Les liens OAuth sont les URL fournies par AntiBotWall Studio.
+  // On les laisse actifs : le service distant gère le démarrage OAuth.
+
 
   function showSignedOut() {
     $("pageTitle").textContent = "Votre espace compte";
