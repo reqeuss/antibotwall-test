@@ -18,15 +18,16 @@
   <main class="profile-wrap">
     <div class="profile-heading"><div class="eyebrow"><i></i> ESPACE COMPTE</div><h1 id="pageTitle">Vérification de la session…</h1><p class="muted" id="pageSubtitle">Récupération des informations du profil.</p></div>
     <section id="signedOut" class="login-panel hidden">
-      <h2 style="font:800 22px Manrope,sans-serif;margin:0 0 8px">Se connecter avec AntiBotWall</h2>
-      <p class="muted" style="font-size:13px;line-height:1.7;margin:0">Choisissez un fournisseur configuré pour votre intégration AntiBotWall.</p>
+      <h2 style="font:800 22px Manrope,sans-serif;margin:0 0 8px">CONNECTE TOI !!!</h2>
+      <p class="muted" style="font-size:13px;line-height:1.7;margin:0">Choisissez votre méthode de connexion. Et oui ?</p>
       <div id="providerList" class="provider-list">
-        <a class="provider-link" data-provider="discord" href="#"><span class="provider-symbol">◉</span> Discord ↗</a>
-        <a class="provider-link" data-provider="github" href="#"><span class="provider-symbol">⌘</span> GitHub ↗</a>
-        <a class="provider-link" data-provider="google" href="#"><span class="provider-symbol">G</span> Google ↗</a>
-        <a class="provider-link" data-provider="epsilonsocial" href="#"><span class="provider-symbol">ε</span> Epsilon Social ↗</a>
+        <a class="provider-link" data-provider="discord" href="https://antibotwall.reqeuss.com/oauth/discord/start?site=abw_pub_c32f8916925fa563bbe2051e414a95c4ea9b969de2078075"><span class="provider-symbol">◉</span> Continuer avec Discord ↗</a>
+        <a class="provider-link" data-provider="github" href="https://antibotwall.reqeuss.com/oauth/github/start?site=abw_pub_c32f8916925fa563bbe2051e414a95c4ea9b969de2078075"><span class="provider-symbol">⌘</span> Continuer avec GitHub ↗</a>
+        <a class="provider-link" data-provider="google" href="https://antibotwall.reqeuss.com/oauth/google/start?site=abw_pub_c32f8916925fa563bbe2051e414a95c4ea9b969de2078075"><span class="provider-symbol">G</span> Continuer avec Google ↗</a>
+        <a class="provider-link" data-provider="epsilonsocial" href="https://antibotwall.reqeuss.com/oauth/epsilonsocial/start?site=abw_pub_c32f8916925fa563bbe2051e414a95c4ea9b969de2078075"><span class="provider-symbol">ε</span> Continuer avec Epsilon Social ↗</a>
       </div>
-      <div class="profile-actions" style="margin-top:20px"><button id="demoProfileButton" class="btn primary" type="button">Prévisualiser un profil démo →</button><a class="btn secondary" href="./#test">Configurer le test CAPTCHA</a></div><p id="loginNotice" class="notice">Mode aperçu disponible sans configuration Cloudflare. Les boutons des fournisseurs seront activés lorsque l’intégration AntiBotWall sera configurée.</p>
+      <div class="profile-actions" style="margin-top:20px"><button id="demoProfileButton" class="btn primary" type="button">Prévisualiser un profil démo →</button><a class="btn secondary" href="./#test">Configurer le test CAPTCHA</a></div>
+      <p id="loginNotice" class="notice">Ces boutons utilisent la clé publique AntiBotWall du site de test. La connexion nécessite que le domaine et les fournisseurs soient activés dans AntiBotWall Studio.</p>
       <p id="profileError" class="notice error-note"></p>
     </section>
     <section id="signedIn" class="hidden">
