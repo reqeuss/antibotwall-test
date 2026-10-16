@@ -1,4 +1,3 @@
 @echo on
-powershell npm install
-powershell npm run deploy
+powershell npx wrangler pages deploy . --project-name antibotwall-test --branch main
 pause
